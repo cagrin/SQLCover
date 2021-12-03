@@ -135,7 +135,7 @@ namespace SQLCover
             {
                 _database.Execute(command, timeOut); //todo read messages or rowcounts or something
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (Microsoft.Data.SqlClient.SqlException e)
             {
                 if (e.Number == -2)
                 {

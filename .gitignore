@@ -226,3 +226,5 @@ TestCoverageOpenHtml
 tools
 Reports
 Log
+src/SQLCover/.vscode/launch.json
+src/SQLCover/.vscode/tasks.json
