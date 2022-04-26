@@ -138,7 +138,10 @@ public IEnumerable<Batch> GetBatches(List<string> objectFilter)
                     @"select  '[' + object_schema_name(object_id) + '].[' + object_name(object_id) + ']' as object_name from sys.procedures
 	where schema_id in (
 select major_id from sys.extended_properties ep
-	where class_desc = 'SCHEMA' and name = 'tSQLt.TestClass' )");
+	where class_desc = 'SCHEMA' and name = 'tSQLt.TestClass'
+    union
+select schema_id from sys.procedures
+    where name like 'test%' )");
 
             var excludedObjects = new List<string>();
 
