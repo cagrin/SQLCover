@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-		<PackageId>SQLCover</PackageId>
+		<PackageId>SQLCoverLib</PackageId>
 		<Authors>Ed Elliott</Authors>
 		<Description>Code coverage tool for SQL Server 2008+</Description>
 		<PackageLicenseFile>License</PackageLicenseFile>

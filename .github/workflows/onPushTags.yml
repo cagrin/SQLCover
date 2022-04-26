@@ -15,4 +15,4 @@ jobs:
       - name: Pack
         run: dotnet pack src/SQLCover/SQLCoverLib --configuration Release /p:Version=${VERSION} /p:ContinuousIntegrationBuild=true --output .
       - name: NuGet push
-        run: dotnet nuget push SQLCover.${VERSION}.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push SQLCoverLib.${VERSION}.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
