@@ -35,7 +35,7 @@ namespace SQLCover.Source
         public bool IsAzure()
         {
             var versionString = _databaseGateway.GetString("select @@version");
-            return versionString.Contains("Azure");
+            return versionString.Contains("Azure") && !versionString.Contains("Azure SQL Edge");
         }
 
 
