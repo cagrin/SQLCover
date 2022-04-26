@@ -1,8 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
+		<PackageId>SQLCover</PackageId>
+		<Authors>Ed Elliott</Authors>
+		<Description>Code coverage tool for SQL Server 2008+</Description>
+		<PackageLicenseFile>License</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 	<ItemGroup>
+		<None Include="../../../License" Pack="true" Visible="false" PackagePath=""/>
+		<None Include="../../../README.md" Pack="true" PackagePath=""/>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
 		<PackageReference Include="CommandLineParser" Version="2.8.0"/>
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="4.0.0"/>
 		<PackageReference Include="Microsoft.SqlServer.DACFx" Version="150.5282.3"/>

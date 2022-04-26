@@ -1,0 +1,18 @@
+name: Pack, nuget.org
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get version from tag
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\/}" >> $GITHUB_ENV
+      - name: Pack
+        run: dotnet pack src/SQLCover/SQLCoverLib --configuration Release /p:Version=${VERSION} /p:ContinuousIntegrationBuild=true --output .
+      - name: NuGet push
+        run: dotnet nuget push SQLCover.${VERSION}.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
