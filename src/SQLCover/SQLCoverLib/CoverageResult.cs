@@ -20,6 +20,11 @@ namespace SQLCover
         public string DatabaseName { get; }
         public string DataSource { get; }
 
+        public IEnumerable<Batch> Batches
+        {
+            get { return _batches; }
+        }
+
         public List<string> SqlExceptions
         {
             get { return _sqlExceptions; }
