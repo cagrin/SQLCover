@@ -43,31 +43,31 @@ public IEnumerable<Batch> GetBatches(List<string> objectFilter)
         {
             var table =
                 _databaseGateway.GetRecords(
-                           
+
                             "SELECT sm.object_id, ISNULL('[' + OBJECT_SCHEMA_NAME(sm.object_id) + '].[' + OBJECT_NAME(sm.object_id) + ']', '[' + st.name + ']')  object_name, sm.definition, sm.uses_quoted_identifier FROM sys.sql_modules sm LEFT JOIN sys.triggers st ON st.object_id = sm.object_id WHERE sm.object_id NOT IN(SELECT object_id FROM sys.objects WHERE type = 'IF'); ");
 
             var batches = new List<Batch>();
-            
+
             var version = GetVersion();
             var excludedObjects = GetExcludedObjects();
             if(objectFilter == null)
                 objectFilter = new List<string>();
 
-            objectFilter.Add(".*tSQLt.*");
+            // objectFilter.Add(".*tSQLt.*");
 
             foreach (DataRow row in table.Rows)
             {
                 var quoted = (bool) row["uses_quoted_identifier"];
-                
+
                 var name = row["object_name"] as string;
-                
+
                 if (name != null && row["object_id"] as int? != null &&  DoesNotMatchFilter(name, objectFilter, excludedObjects))
                 {
                     batches.Add(
                         new Batch(new StatementParser(version), quoted, EndDefinitionWithNewLine(GetDefinition(row)), name, name, (int) row["object_id"]));
 
                 }
-                
+
             }
 
             table.Dispose();
@@ -91,7 +91,7 @@ public IEnumerable<Batch> GetBatches(List<string> objectFilter)
             }
 
             return String.Empty;
-            
+
   }
         public string GetWarnings()
         {
@@ -169,7 +169,7 @@ select schema_id from sys.procedures
                 if (filter == lowerName)
                     return false;
             }
-            
+
             return true;
         }
     }
