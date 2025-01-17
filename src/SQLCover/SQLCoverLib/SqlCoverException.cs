@@ -17,9 +17,5 @@ namespace SQLCover
         public SqlCoverException(string message, Exception innerException) : base(message, innerException)
         {
         }
-
-        protected SqlCoverException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
     }
 }

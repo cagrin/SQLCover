@@ -1,0 +1,21 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker": {},
+        "ghcr.io/devcontainers/features/dotnet": {
+            "version": "8.0"
+        },
+        "ghcr.io/devcontainers/features/powershell": {},
+        "./dotnet-outdated-tool": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"ms-dotnettools.csdevkit",
+				"ms-dotnettools.csharp",
+				"ms-dotnettools.vscodeintellicode-csharp",
+				"ms-dotnettools.vscode-dotnet-runtime"
+			]
+        }
+    }
+}

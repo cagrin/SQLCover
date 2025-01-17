@@ -2,7 +2,7 @@
 [![Nuget](https://img.shields.io/nuget/dt/SQLCoverLib)](https://www.nuget.org/stats/packages/SQLCoverLib?groupby=Version)
 
 # SQLCoverLib
-Fork of famous https://github.com/GoEddie/SQLCover with SQLCoverLib updated to .NET 6 and 7.
+Fork of famous https://github.com/GoEddie/SQLCover with SQLCoverLib updated to .NET 8.
 
 ## Usage
 SQLCoverLib is published as [a nuget package](https://www.nuget.org/packages/SQLCoverLib) with support for:

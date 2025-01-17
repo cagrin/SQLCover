@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+		<TargetFrameworks>net8.0</TargetFrameworks>
 		<PackageId>SQLCoverLib</PackageId>
 		<Authors>Ed Elliott</Authors>
 		<Description>Code coverage tool for SQL Server 2008+</Description>
@@ -14,9 +14,9 @@
 	<ItemGroup>
 		<None Include="../../../License" Pack="true" Visible="false" PackagePath=""/>
 		<None Include="../../../README.md" Pack="true" PackagePath=""/>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
 		<PackageReference Include="CommandLineParser" Version="2.9.1"/>
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1"/>
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2"/>
 		<PackageReference Include="Microsoft.SqlServer.DACFx" Version="161.6374.0"/>
 	</ItemGroup>
 </Project>
