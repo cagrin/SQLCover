@@ -17,6 +17,6 @@
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
 		<PackageReference Include="CommandLineParser" Version="2.9.1"/>
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2"/>
-		<PackageReference Include="Microsoft.SqlServer.DACFx" Version="161.6374.0"/>
+		<PackageReference Include="Microsoft.SqlServer.DACFx" Version="162.5.57"/>
 	</ItemGroup>
 </Project>
